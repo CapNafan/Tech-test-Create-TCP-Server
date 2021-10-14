@@ -19,11 +19,11 @@ def write_log(msg):
     f.close()
 
 
-def formatting(msg):        # "0002 C1 01:13:02.877 00[CR]"
+def formatting(msg):        # input data format "0002 C1 01:13:02.877 00\r"
     data_tuple = tuple(msg.split())
     athlete, nn, time, group = data_tuple[0], data_tuple[1], data_tuple[2][:10], data_tuple[3][:2]
     if group == GROUP_ZERO:
-        return f"athlete number {athlete} passed checkpoint {nn} at {time}"
+        return f"athlete number {athlete} passed checkpoint {nn} at {time}\r\n"
     else:
         return ""
 
