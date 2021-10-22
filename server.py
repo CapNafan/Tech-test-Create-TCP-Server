@@ -12,13 +12,12 @@ GROUP_ZERO = '00'
 
 
 def write_log(msg):
-    f = open("log.txt", "a")
-    f.write(msg + "\r")
-    f.close()
+    with open("log.txt", "a") as f:
+    f.write(msg + "\n")
 
 
 def validate(msg):
-    return re.match(r"\d{4}\s*[A-Z]\d\s*\d{2}[:]\d{2}[:]\d{2}[.]\d{3}\s*\d{2}", msg)
+    return re.match(re.match(r"\d{4}\s+[A-Z]\d\s+\d{2}[:][0-5]\d[:][0-5]\d[.]\d{3}\s+\d{2}", msg)
 
 
 def process_message(msg):        # "0002 C1 01:13:02.877 00[CR]"
