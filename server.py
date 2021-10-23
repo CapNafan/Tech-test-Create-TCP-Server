@@ -3,7 +3,7 @@ import threading
 import re
 
 HEADER = 64
-PORT = 8080
+PORT = 23
 HOST = "127.0.0.1"
 ADDR = (HOST, PORT)
 FORMAT = "utf-8"
